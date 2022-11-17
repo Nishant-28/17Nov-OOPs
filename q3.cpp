@@ -44,7 +44,7 @@ void employee::putdata()
 void employee::storedata()
 {
     ofstream fout;
-    fout.open("employee.dat", ios::out);
+    fout.open("employee.txt", ios::out);
     fout.write((char *)this, sizeof(*this));
     fout.close();
 }
@@ -52,7 +52,7 @@ void employee::storedata()
 void employee::readdata()
 {
     ifstream fin;
-    fin.open("employee.dat", ios::in);
+    fin.open("employee.txt", ios::in);
     fin.read((char *)this, sizeof(*this));
     fin.close();
 }
