@@ -1,42 +1,55 @@
-
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
 
-template<class T>
 class student
 {
-    T name;
-    T roll;
-    T marks;
+    string name;
+    int roll;
+    string branch;
+
 public:
+
     void getdata()
     {
-        cout<<"Enter name: ";
-        cin>>name;
-        cout<<"Enter roll: ";
-        cin>>roll;
-        cout<<"Enter marks: ";
-        cin>>marks;
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter roll: ";
+        cin >> roll;
+        cout << "Enter branch: ";
+        cin >> branch;
     }
+
     void display()
     {
-        cout<<"Name: "<<name<<endl;
-        cout<<"Roll: "<<roll<<endl;
-        cout<<"Marks: "<<marks<<endl;
+        cout << "Name: " << name << endl;
+        cout << "Roll: " << roll << endl;
+        cout << "Branch: " << branch << endl;
     }
 };
 
+template <class T>
+
+void swapp(T &a, T &b)
+{
+    T temp;
+    temp = a;
+    a = b;
+    b = temp;
+}
+
 int main()
 {
-    student<int> s1;
-    student<char> s2;
-    cout<<"Enter details of student 1: "<<endl;
+    student s1, s2;
+    cout << "Enter details of student 1: " << endl;
     s1.getdata();
-    cout<<"Enter details of student 2: "<<endl;
+    cout << "\nEnter details of student 2: " << endl;
     s2.getdata();
-    cout<<"Details of student 1: "<<endl;
+    swapp(s1, s2);
+    cout << "\nDetails of student 1: " << endl;
     s1.display();
-    cout<<"Details of student 2: "<<endl;
+    cout << "\nDetails of student 2: " << endl;
     s2.display();
     return 0;
 }
+
